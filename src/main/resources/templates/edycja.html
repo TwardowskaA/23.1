@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+
+<form action="/edytuj" method="post" th:object="${book}">
+    <input type="text" th:field="*{title}" placeholder="Tytuł" /> <br>
+    <input type="text" th:field="*{premiereDate}" placeholder="Data wydania" /> <br>
+    <input type="text" th:field="*{isbn}" placeholder="Isbn" /> <br>
+    <select th:field="*{category}">
+        <option
+                th:each="category: ${T(com.example.demo.Category).values()}"
+                th:text="${category}"
+                th:value="${category}">
+        </option>
+    </select>
+    <textarea rows="50" th:field="*{description}" placeholder="Opis"></textarea> <br>
+    <input type="submit" value="Edytuj" /> <br>
+</form>
+
+</body>
+</html>
