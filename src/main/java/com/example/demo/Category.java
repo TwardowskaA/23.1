@@ -5,4 +5,5 @@ public enum Category {
     ADVENTURE,
     SCIENCE_FICTION,
     FANTASY,
+
 }

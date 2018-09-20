@@ -28,7 +28,6 @@ public class BookController {
     @GetMapping("/edytuj/{id}")
     public String edit(@PathVariable Long id, Model model) {
         Book book = bookRepository.findById(id);
-        model.addAttribute("id",id);
         model.addAttribute("book", book);
         return "edycja";
     }
@@ -44,4 +43,5 @@ public class BookController {
         bookRepository.remove(id);
         return "redirect:/";
     }
+
 }

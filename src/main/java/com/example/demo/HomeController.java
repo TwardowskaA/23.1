@@ -22,6 +22,7 @@ public class HomeController {
         List<Book> books = bookRepository.findAll();
         model.addAttribute("books", books);
         return "home";
+
     }
 
 }
